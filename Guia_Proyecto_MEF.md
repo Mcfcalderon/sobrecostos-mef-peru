@@ -9,9 +9,9 @@
 | Nombre | Código | GitHub |
 |---|---|---|
 | Calderón Flores, Marvin Andy | [Código] | @Mcfcalderon |
-| [Integrante 2] | [Código] | _(pendiente)_ |
-| [Integrante 3] | [Código] | _(pendiente)_ |
-| [Integrante 4] | [Código] | _(pendiente)_ |
+| Chavez Arias, Cristihan David | [Código] | @cristihanchavez-code |
+| Lapa Zuñiga, Melissa | 202220147 | @MeliDant |
+| Lopez Contreras, Aldair Mauricio | [Código] | _(pendiente)_ |
 
 ## Objetivo y alcance
 Desarrollar y comparar modelos de Machine Learning que predigan el porcentaje de desviación presupuestal (sobrecosto) de un proyecto de inversión pública a partir de sus características iniciales, usando datos del MEF (Invierte.pe).
