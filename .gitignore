@@ -1,0 +1,20 @@
+# Datos grandes -- el snapshot fijo del MEF vive en Google Drive (ver Guia_Proyecto_MEF.md)
+inversiones_mef_snapshot.csv
+*.csv
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Jupyter/Python
+.ipynb_checkpoints/
+__pycache__/
+
+# Office (archivos temporales de edicion)
+~$*.docx
+~$*.xlsx
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
