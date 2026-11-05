@@ -2,6 +2,8 @@
 
 Proyecto final IN5306 Applied Machine Learning (UTEC, ciclo 2026-2) · Predicción de sobrecostos en inversión pública del Perú (MEF).
 
+**Plataforma web:** https://sobrecostos-mef-peru.streamlit.app/
+
 ## Contenido
 
 | Archivo / carpeta | Qué es |
