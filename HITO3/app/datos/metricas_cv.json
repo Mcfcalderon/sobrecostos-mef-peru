@@ -1,0 +1,162 @@
+[
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Baseline (media)",
+  "MAE_cv": 40.835,
+  "RMSE_cv": 51.762,
+  "R2_cv": 0.0,
+  "R2_cv_std": 0.0,
+  "R2_train": 0.0,
+  "Tiempo fit por fold (s)": 1.294
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Regresion Lineal",
+  "MAE_cv": 38.104,
+  "RMSE_cv": 49.053,
+  "R2_cv": 0.102,
+  "R2_cv_std": 0.001,
+  "R2_train": 0.109,
+  "Tiempo fit por fold (s)": 2.602
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Ridge",
+  "MAE_cv": 38.102,
+  "RMSE_cv": 49.046,
+  "R2_cv": 0.102,
+  "R2_cv_std": 0.001,
+  "R2_train": 0.109,
+  "Tiempo fit por fold (s)": 1.409
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Arbol de Decision",
+  "MAE_cv": 37.059,
+  "RMSE_cv": 48.419,
+  "R2_cv": 0.125,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.18,
+  "Tiempo fit por fold (s)": 2.449
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Bagging",
+  "MAE_cv": 35.63,
+  "RMSE_cv": 46.702,
+  "R2_cv": 0.186,
+  "R2_cv_std": 0.002,
+  "R2_train": 0.355,
+  "Tiempo fit por fold (s)": 25.733
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Random Forest",
+  "MAE_cv": 36.076,
+  "RMSE_cv": 46.847,
+  "R2_cv": 0.181,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.295,
+  "Tiempo fit por fold (s)": 10.322
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Gradient Boosting",
+  "MAE_cv": 35.619,
+  "RMSE_cv": 46.568,
+  "R2_cv": 0.191,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.233,
+  "Tiempo fit por fold (s)": 7.055
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Stacking",
+  "MAE_cv": 35.491,
+  "RMSE_cv": 46.509,
+  "R2_cv": 0.193,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.239,
+  "Tiempo fit por fold (s)": 31.724
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Baseline (media)",
+  "MAE_cv": 40.835,
+  "RMSE_cv": 51.762,
+  "R2_cv": 0.0,
+  "R2_cv_std": 0.0,
+  "R2_train": 0.0,
+  "Tiempo fit por fold (s)": 0.896
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Regresion Lineal",
+  "MAE_cv": 33.59,
+  "RMSE_cv": 43.703,
+  "R2_cv": 0.287,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.294,
+  "Tiempo fit por fold (s)": 1.816
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Ridge",
+  "MAE_cv": 33.593,
+  "RMSE_cv": 43.698,
+  "R2_cv": 0.287,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.294,
+  "Tiempo fit por fold (s)": 1.332
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Arbol de Decision",
+  "MAE_cv": 19.68,
+  "RMSE_cv": 32.233,
+  "R2_cv": 0.612,
+  "R2_cv_std": 0.006,
+  "R2_train": 0.644,
+  "Tiempo fit por fold (s)": 2.727
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Bagging",
+  "MAE_cv": 18.648,
+  "RMSE_cv": 30.826,
+  "R2_cv": 0.645,
+  "R2_cv_std": 0.005,
+  "R2_train": 0.719,
+  "Tiempo fit por fold (s)": 23.327
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Random Forest",
+  "MAE_cv": 24.04,
+  "RMSE_cv": 34.12,
+  "R2_cv": 0.565,
+  "R2_cv_std": 0.003,
+  "R2_train": 0.643,
+  "Tiempo fit por fold (s)": 11.065
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Gradient Boosting",
+  "MAE_cv": 18.629,
+  "RMSE_cv": 30.527,
+  "R2_cv": 0.652,
+  "R2_cv_std": 0.005,
+  "R2_train": 0.68,
+  "Tiempo fit por fold (s)": 6.561
+ },
+ {
+  "Escenario": "C - Expediente tecnico",
+  "Modelo": "Stacking",
+  "MAE_cv": 18.558,
+  "RMSE_cv": 30.517,
+  "R2_cv": 0.652,
+  "R2_cv_std": 0.005,
+  "R2_train": 0.68,
+  "Tiempo fit por fold (s)": 30.15
+ }
+]

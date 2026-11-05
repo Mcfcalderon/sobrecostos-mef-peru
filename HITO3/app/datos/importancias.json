@@ -1,0 +1,146 @@
+{
+ "B - Viabilidad": [
+  {
+   "variable": "monto_viable_log",
+   "importancia": 0.1474853073
+  },
+  {
+   "variable": "plazo_dias",
+   "importancia": 0.143033996
+  },
+  {
+   "variable": "anio_viabilidad",
+   "importancia": 0.0882338558
+  },
+  {
+   "variable": "DES_MODALIDAD",
+   "importancia": 0.0581948187
+  },
+  {
+   "variable": "DEPARTAMENTO",
+   "importancia": 0.056212499
+  },
+  {
+   "variable": "NIVEL",
+   "importancia": 0.0367310242
+  },
+  {
+   "variable": "LATITUD",
+   "importancia": 0.0292608748
+  },
+  {
+   "variable": "LONGITUD",
+   "importancia": 0.0270503624
+  },
+  {
+   "variable": "TIPO_INVERSION",
+   "importancia": 0.0228708692
+  },
+  {
+   "variable": "FUNCION",
+   "importancia": 0.0117387251
+  },
+  {
+   "variable": "PROGRAMA",
+   "importancia": 0.0114807793
+  },
+  {
+   "variable": "SUBPROGRAMA",
+   "importancia": 0.0096504346
+  },
+  {
+   "variable": "DES_TIPOLOGIA",
+   "importancia": 0.0075099657
+  },
+  {
+   "variable": "SECTOR",
+   "importancia": 0.0066065145
+  },
+  {
+   "variable": "MARCO",
+   "importancia": 0.0013053206
+  },
+  {
+   "variable": "IND_IOARR_EMERG",
+   "importancia": 0.0008730127
+  }
+ ],
+ "C - Expediente tecnico": [
+  {
+   "variable": "ratio_et_viable",
+   "importancia": 1.5799793261
+  },
+  {
+   "variable": "TIPO_INVERSION",
+   "importancia": 0.4218334028
+  },
+  {
+   "variable": "anio_viabilidad",
+   "importancia": 0.0465920488
+  },
+  {
+   "variable": "plazo_dias",
+   "importancia": 0.0391647651
+  },
+  {
+   "variable": "monto_viable_log",
+   "importancia": 0.0210821928
+  },
+  {
+   "variable": "DEPARTAMENTO",
+   "importancia": 0.012616535
+  },
+  {
+   "variable": "SECTOR",
+   "importancia": 0.0125738349
+  },
+  {
+   "variable": "MARCO",
+   "importancia": 0.0108934403
+  },
+  {
+   "variable": "LONGITUD",
+   "importancia": 0.0085701255
+  },
+  {
+   "variable": "MONTO_ET_F8",
+   "importancia": 0.0079368207
+  },
+  {
+   "variable": "LATITUD",
+   "importancia": 0.0078224032
+  },
+  {
+   "variable": "NIVEL",
+   "importancia": 0.0074925437
+  },
+  {
+   "variable": "DES_MODALIDAD",
+   "importancia": 0.0072165443
+  },
+  {
+   "variable": "SUBPROGRAMA",
+   "importancia": 0.0043032422
+  },
+  {
+   "variable": "EXPEDIENTE_TECNICO",
+   "importancia": 0.0037870833
+  },
+  {
+   "variable": "DES_TIPOLOGIA",
+   "importancia": 0.0036151977
+  },
+  {
+   "variable": "PROGRAMA",
+   "importancia": 0.0030093414
+  },
+  {
+   "variable": "FUNCION",
+   "importancia": 0.0010083293
+  },
+  {
+   "variable": "IND_IOARR_EMERG",
+   "importancia": 0.0001155684
+  }
+ ]
+}

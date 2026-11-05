@@ -1,0 +1,44 @@
+[
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Regresion Lineal",
+  "MAE_cv": 38.104,
+  "RMSE_cv": 49.053,
+  "R2_cv": 0.102
+ },
+ {
+  "Escenario": "B - Viabilidad",
+  "Modelo": "Gradient Boosting",
+  "MAE_cv": 35.619,
+  "RMSE_cv": 46.568,
+  "R2_cv": 0.191
+ },
+ {
+  "Escenario": "B + 17 fuga",
+  "Modelo": "Regresion Lineal",
+  "MAE_cv": 36.217,
+  "RMSE_cv": 47.92,
+  "R2_cv": 0.141
+ },
+ {
+  "Escenario": "B + 17 fuga",
+  "Modelo": "Gradient Boosting",
+  "MAE_cv": 10.51,
+  "RMSE_cv": 16.451,
+  "R2_cv": 0.899
+ },
+ {
+  "Escenario": "B + 18 fuga",
+  "Modelo": "Regresion Lineal",
+  "MAE_cv": 36.199,
+  "RMSE_cv": 47.903,
+  "R2_cv": 0.141
+ },
+ {
+  "Escenario": "B + 18 fuga",
+  "Modelo": "Gradient Boosting",
+  "MAE_cv": 3.117,
+  "RMSE_cv": 5.339,
+  "R2_cv": 0.989
+ }
+]

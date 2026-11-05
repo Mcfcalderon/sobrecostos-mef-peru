@@ -1,0 +1,35 @@
+[
+ {
+  "grupo": 0,
+  "obras": 24507,
+  "monto_mediano_millones": 0.8,
+  "plazo_mediano_dias": 765.0,
+  "anio_mediano": 2023.0,
+  "departamento_mas_frecuente": "CUSCO",
+  "desviacion_mediana": 15.6,
+  "pct_sobrecosto_severo": 26.7,
+  "% de obras": 32.4
+ },
+ {
+  "grupo": 1,
+  "obras": 30776,
+  "monto_mediano_millones": 0.8,
+  "plazo_mediano_dias": 525.0,
+  "anio_mediano": 2023.0,
+  "departamento_mas_frecuente": "ANCASH",
+  "desviacion_mediana": 11.4,
+  "pct_sobrecosto_severo": 24.7,
+  "% de obras": 40.7
+ },
+ {
+  "grupo": 2,
+  "obras": 20292,
+  "monto_mediano_millones": 3.0,
+  "plazo_mediano_dias": 2628.0,
+  "anio_mediano": 2016.0,
+  "departamento_mas_frecuente": "LIMA",
+  "desviacion_mediana": 25.1,
+  "pct_sobrecosto_severo": 32.7,
+  "% de obras": 26.9
+ }
+]

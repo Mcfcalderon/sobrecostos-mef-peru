@@ -1,0 +1,96 @@
+{
+ "prueba1": [
+  {
+   "etapa": "0% (sin gasto)",
+   "obras": 14216,
+   "pct_costo_igual_ET": 40.3,
+   "pct_costo_mayor_ET": 54.5,
+   "desviacion_final_mediana": 3.7
+  },
+  {
+   "etapa": "0-25%",
+   "obras": 20782,
+   "pct_costo_igual_ET": 48.9,
+   "pct_costo_mayor_ET": 42.9,
+   "desviacion_final_mediana": 24.0
+  },
+  {
+   "etapa": "25-50%",
+   "obras": 5100,
+   "pct_costo_igual_ET": 38.2,
+   "pct_costo_mayor_ET": 48.7,
+   "desviacion_final_mediana": 22.7
+  },
+  {
+   "etapa": "50-75%",
+   "obras": 6627,
+   "pct_costo_igual_ET": 30.7,
+   "pct_costo_mayor_ET": 55.5,
+   "desviacion_final_mediana": 21.8
+  },
+  {
+   "etapa": "75-95%",
+   "obras": 17035,
+   "pct_costo_igual_ET": 22.8,
+   "pct_costo_mayor_ET": 65.7,
+   "desviacion_final_mediana": 20.3
+  },
+  {
+   "etapa": "> 95%",
+   "obras": 30709,
+   "pct_costo_igual_ET": 16.6,
+   "pct_costo_mayor_ET": 65.3,
+   "desviacion_final_mediana": 15.3
+  }
+ ],
+ "prueba2": [
+  {
+   "Subconjunto de prueba": "Todo el conjunto de prueba",
+   "Obras": 18894,
+   "R² B": 0.219,
+   "R² C": 0.671,
+   "MAE B": 34.731,
+   "MAE C": 17.86
+  },
+  {
+   "Subconjunto de prueba": "Sin casos espejo (costo != expediente)",
+   "Obras": 13152,
+   "R² B": 0.236,
+   "R² C": 0.571,
+   "MAE B": 35.274,
+   "MAE C": 22.58
+  },
+  {
+   "Subconjunto de prueba": "Obras casi terminadas (gasto > 95%)",
+   "Obras": 6090,
+   "R² B": 0.202,
+   "R² C": 0.638,
+   "MAE B": 34.294,
+   "MAE C": 19.363
+  },
+  {
+   "Subconjunto de prueba": "Casi terminadas y sin espejo",
+   "Obras": 5066,
+   "R² B": 0.215,
+   "R² C": 0.599,
+   "MAE B": 34.794,
+   "MAE C": 21.481
+  },
+  {
+   "Subconjunto de prueba": "Sin ningun gasto ejecutado (gasto = 0)",
+   "Obras": 2842,
+   "R² B": 0.145,
+   "R² C": 0.635,
+   "MAE B": 26.395,
+   "MAE C": 12.759
+  },
+  {
+   "Subconjunto de prueba": "Reentrenado y evaluado sin casos espejo",
+   "Obras": 13152,
+   "R² B": 0.241,
+   "R² C": 0.576,
+   "MAE B": 35.23,
+   "MAE C": 23.234
+  }
+ ]
+}

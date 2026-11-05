@@ -1,0 +1,23 @@
+{
+ "obras_total": 150020,
+ "obras_modelo": 94469,
+ "obras_train": 75575,
+ "obras_test": 18894,
+ "fecha_snapshot": "2026-09",
+ "lim_inf": -86.07226640745299,
+ "lim_sup": 141.86332011208623,
+ "mejor_modelo": {
+  "B - Viabilidad": "Gradient Boosting",
+  "C - Expediente tecnico": "Gradient Boosting"
+ },
+ "cortes_riesgo": {
+  "B - Viabilidad": {
+   "p50": 28.01667374912718,
+   "p80": 49.15051625844107
+  },
+  "C - Expediente tecnico": {
+   "p50": 21.17856052333341,
+   "p80": 59.83104359106719
+  }
+ }
+}

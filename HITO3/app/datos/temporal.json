@@ -1,0 +1,144 @@
+{
+ "detalle": [
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Ridge",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.079,
+   "MAE": 45.141,
+   "Sesgo medio (pred - real)": 4.759
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Ridge",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": -0.176,
+   "MAE": 44.162,
+   "Sesgo medio (pred - real)": 18.657
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Random Forest",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.137,
+   "MAE": 42.827,
+   "Sesgo medio (pred - real)": 3.146
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Random Forest",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": -0.055,
+   "MAE": 40.317,
+   "Sesgo medio (pred - real)": 12.313
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Gradient Boosting",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.138,
+   "MAE": 42.686,
+   "Sesgo medio (pred - real)": 2.649
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Gradient Boosting",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": -0.041,
+   "MAE": 39.439,
+   "Sesgo medio (pred - real)": 10.137
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Ridge",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.28,
+   "MAE": 38.354,
+   "Sesgo medio (pred - real)": 3.719
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Ridge",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": -0.062,
+   "MAE": 39.488,
+   "Sesgo medio (pred - real)": 12.009
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Random Forest",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.665,
+   "MAE": 22.961,
+   "Sesgo medio (pred - real)": 4.444
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Random Forest",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": 0.535,
+   "MAE": 22.979,
+   "Sesgo medio (pred - real)": 7.709
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Gradient Boosting",
+   "Prueba": "2022 (un anio adelante)",
+   "R2": 0.683,
+   "MAE": 21.282,
+   "Sesgo medio (pred - real)": 3.666
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Gradient Boosting",
+   "Prueba": "2023-2026 (obras en curso)",
+   "R2": 0.557,
+   "MAE": 21.203,
+   "Sesgo medio (pred - real)": 6.139
+  }
+ ],
+ "resumen": [
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Gradient Boosting",
+   "2022 (un anio adelante)": 0.138,
+   "2023-2026 (obras en curso)": -0.041,
+   "R2 particion aleatoria": 0.219
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Random Forest",
+   "2022 (un anio adelante)": 0.137,
+   "2023-2026 (obras en curso)": -0.055,
+   "R2 particion aleatoria": 0.23
+  },
+  {
+   "Escenario": "B - Viabilidad",
+   "Modelo": "Ridge",
+   "2022 (un anio adelante)": 0.079,
+   "2023-2026 (obras en curso)": -0.176,
+   "R2 particion aleatoria": 0.107
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Gradient Boosting",
+   "2022 (un anio adelante)": 0.683,
+   "2023-2026 (obras en curso)": 0.557,
+   "R2 particion aleatoria": 0.671
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Random Forest",
+   "2022 (un anio adelante)": 0.665,
+   "2023-2026 (obras en curso)": 0.535,
+   "R2 particion aleatoria": 0.67
+  },
+  {
+   "Escenario": "C - Expediente tecnico",
+   "Modelo": "Ridge",
+   "2022 (un anio adelante)": 0.28,
+   "2023-2026 (obras en curso)": -0.062,
+   "R2 particion aleatoria": 0.291
+  }
+ ]
+}
