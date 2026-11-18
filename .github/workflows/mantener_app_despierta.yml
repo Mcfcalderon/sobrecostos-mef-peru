@@ -1,0 +1,28 @@
+name: Mantener app despierta
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"   # cada 4 horas (UTC)
+  workflow_dispatch:          # boton "Run workflow" para lanzarlo a mano
+
+jobs:
+  despertar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar Playwright
+        run: |
+          pip install playwright==1.47.0
+          python -m playwright install --with-deps chromium
+      - name: Abrir la app
+        run: python .github/scripts/despertar_app.py
+      - name: Guardar captura si fallo
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: estado-app
+          path: estado_app.png
