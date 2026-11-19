@@ -9,7 +9,7 @@ import sys
 from playwright.sync_api import sync_playwright
 
 URL = "https://sobrecostos-mef-peru.streamlit.app/"
-TITULO = "Predicción de sobrecostos"
+TITULO = "Alerta temprana de sobrecostos"
 
 
 def app_cargada(page):
@@ -35,7 +35,7 @@ with sync_playwright() as p:
 
     for _ in range(18):  # hasta ~3 minutos
         if app_cargada(page):
-            print("OK: la app esta despierta y muestra la pagina de Inicio.")
+            print("OK: la app esta despierta y muestra la portada de Vigia Obras.")
             browser.close()
             sys.exit(0)
         page.wait_for_timeout(10_000)
