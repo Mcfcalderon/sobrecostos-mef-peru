@@ -9,9 +9,9 @@
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Gradient Boosting",
-  "MAE_cv": 35.619,
-  "RMSE_cv": 46.568,
-  "R2_cv": 0.191
+  "MAE_cv": 35.662,
+  "RMSE_cv": 46.608,
+  "R2_cv": 0.189
  },
  {
   "Escenario": "B + 17 fuga",
@@ -23,9 +23,9 @@
  {
   "Escenario": "B + 17 fuga",
   "Modelo": "Gradient Boosting",
-  "MAE_cv": 10.51,
-  "RMSE_cv": 16.451,
-  "R2_cv": 0.899
+  "MAE_cv": 10.436,
+  "RMSE_cv": 16.39,
+  "R2_cv": 0.9
  },
  {
   "Escenario": "B + 18 fuga",
@@ -37,8 +37,8 @@
  {
   "Escenario": "B + 18 fuga",
   "Modelo": "Gradient Boosting",
-  "MAE_cv": 3.117,
-  "RMSE_cv": 5.339,
+  "MAE_cv": 3.164,
+  "RMSE_cv": 5.427,
   "R2_cv": 0.989
  }
 ]

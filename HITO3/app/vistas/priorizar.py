@@ -3,10 +3,10 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from utils import COLOR_ESC, ESC_B, ESC_C, NOMBRE_ESC, configurar_pagina, leer_json, leer_tabla, pie_de_pagina
+from utils import COLOR_ESC, ESC_B, ESC_C, NOMBRE_ESC, encabezado, leer_json, leer_tabla, siguiente
 
-configurar_pagina('Priorizar obras', '🎯')
-st.title('Priorizar obras para supervisión')
+RUTA = 'vistas/priorizar.py'
+encabezado(RUTA, 'La utilidad práctica del modelo: decidir qué obras revisar primero.')
 st.markdown(
     'Con recursos de supervisión limitados, lo importante no es el valor exacto del sobrecosto sino **qué obras revisar '
     'primero**. Aquí se usan las obras del conjunto de prueba (que el modelo nunca vio al entrenar), se ordenan por el '
@@ -90,6 +90,8 @@ st.dataframe(tabla, hide_index=True, width='stretch', height=480,
                  'desviacion_real': st.column_config.NumberColumn('Sobrecosto real (%)', format='%.1f'),
              })
 st.caption('El sobrecosto real es el registrado en el snapshot del MEF; en obras aún en ejecución todavía puede cambiar. '
-           'Se puede buscar cada obra por su CUI en el portal de consulta de inversiones del MEF.')
+           'Se puede buscar cada obra por su CUI en el portal de consulta de inversiones del MEF. Las predicciones salen '
+           'de los modelos exportados para la plataforma y pueden diferir en décimas de las tablas del informe, por la '
+           'aleatoriedad propia del entrenamiento de Gradient Boosting.')
 
-pie_de_pagina()
+siguiente(RUTA)

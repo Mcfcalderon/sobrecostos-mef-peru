@@ -3,11 +3,10 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from utils import (COLOR_ESC, ESC_B, ESC_C, configurar_pagina, leer_json, leer_modelo, leer_tabla, nivel_riesgo,
-                   pie_de_pagina, soles)
+from utils import (ESC_B, ESC_C, encabezado, leer_json, leer_modelo, leer_tabla, nivel_riesgo, siguiente, soles)
 
-configurar_pagina('Simulador', '🧮')
-st.title('Simulador: ¿cuánto sobrecosto podría tener una obra nueva?')
+RUTA = 'vistas/simulador.py'
+encabezado(RUTA, '¿Cuánto sobrecosto podría tener una obra nueva? Pruébalo con los modelos finales B y C.')
 st.markdown('Ingresa los datos de una obra tal como se conocen **al declarar su viabilidad** (modelo B). Si además ya '
             'tiene **expediente técnico aprobado**, ingresa su monto para usar el modelo C, que es más preciso.')
 
@@ -132,4 +131,4 @@ st.warning('Es una estimación estadística para **priorizar la supervisión**, 
            f'del {r2[ESC_B] * 100:.0f}% de la variación del sobrecosto; sirve para ordenar obras por riesgo, no para '
            'predecir el monto exacto.')
 
-pie_de_pagina()
+siguiente(RUTA)

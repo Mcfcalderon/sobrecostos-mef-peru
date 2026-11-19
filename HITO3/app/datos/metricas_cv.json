@@ -4,7 +4,7 @@
   "Modelo": "Baseline (media)",
   "MAE_cv": 40.835,
   "RMSE_cv": 51.762,
-  "R2_cv": 0.0,
+  "R2_cv": -0.0,
   "R2_cv_std": 0.0,
   "R2_train": 0.0,
   "Tiempo fit por fold (s)": 1.294
@@ -17,7 +17,7 @@
   "R2_cv": 0.102,
   "R2_cv_std": 0.001,
   "R2_train": 0.109,
-  "Tiempo fit por fold (s)": 2.602
+  "Tiempo fit por fold (s)": 2.76
  },
  {
   "Escenario": "B - Viabilidad",
@@ -27,64 +27,64 @@
   "R2_cv": 0.102,
   "R2_cv_std": 0.001,
   "R2_train": 0.109,
-  "Tiempo fit por fold (s)": 1.409
+  "Tiempo fit por fold (s)": 2.182
  },
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Arbol de Decision",
-  "MAE_cv": 37.059,
+  "MAE_cv": 37.058,
   "RMSE_cv": 48.419,
   "R2_cv": 0.125,
   "R2_cv_std": 0.003,
   "R2_train": 0.18,
-  "Tiempo fit por fold (s)": 2.449
+  "Tiempo fit por fold (s)": 2.68
  },
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Bagging",
-  "MAE_cv": 35.63,
-  "RMSE_cv": 46.702,
+  "MAE_cv": 35.629,
+  "RMSE_cv": 46.701,
   "R2_cv": 0.186,
   "R2_cv_std": 0.002,
   "R2_train": 0.355,
-  "Tiempo fit por fold (s)": 25.733
+  "Tiempo fit por fold (s)": 63.45
  },
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Random Forest",
-  "MAE_cv": 36.076,
-  "RMSE_cv": 46.847,
+  "MAE_cv": 36.069,
+  "RMSE_cv": 46.84,
   "R2_cv": 0.181,
   "R2_cv_std": 0.003,
   "R2_train": 0.295,
-  "Tiempo fit por fold (s)": 10.322
+  "Tiempo fit por fold (s)": 35.708
  },
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Gradient Boosting",
-  "MAE_cv": 35.619,
-  "RMSE_cv": 46.568,
-  "R2_cv": 0.191,
+  "MAE_cv": 35.662,
+  "RMSE_cv": 46.608,
+  "R2_cv": 0.189,
   "R2_cv_std": 0.003,
-  "R2_train": 0.233,
-  "Tiempo fit por fold (s)": 7.055
+  "R2_train": 0.232,
+  "Tiempo fit por fold (s)": 13.513
  },
  {
   "Escenario": "B - Viabilidad",
   "Modelo": "Stacking",
-  "MAE_cv": 35.491,
-  "RMSE_cv": 46.509,
-  "R2_cv": 0.193,
+  "MAE_cv": 35.543,
+  "RMSE_cv": 46.548,
+  "R2_cv": 0.191,
   "R2_cv_std": 0.003,
-  "R2_train": 0.239,
-  "Tiempo fit por fold (s)": 31.724
+  "R2_train": 0.238,
+  "Tiempo fit por fold (s)": 56.672
  },
  {
   "Escenario": "C - Expediente tecnico",
   "Modelo": "Baseline (media)",
   "MAE_cv": 40.835,
   "RMSE_cv": 51.762,
-  "R2_cv": 0.0,
+  "R2_cv": -0.0,
   "R2_cv_std": 0.0,
   "R2_train": 0.0,
   "Tiempo fit por fold (s)": 0.896
@@ -97,7 +97,7 @@
   "R2_cv": 0.287,
   "R2_cv_std": 0.003,
   "R2_train": 0.294,
-  "Tiempo fit por fold (s)": 1.816
+  "Tiempo fit por fold (s)": 3.722
  },
  {
   "Escenario": "C - Expediente tecnico",
@@ -107,7 +107,7 @@
   "R2_cv": 0.287,
   "R2_cv_std": 0.003,
   "R2_train": 0.294,
-  "Tiempo fit por fold (s)": 1.332
+  "Tiempo fit por fold (s)": 2.428
  },
  {
   "Escenario": "C - Expediente tecnico",
@@ -117,46 +117,46 @@
   "R2_cv": 0.612,
   "R2_cv_std": 0.006,
   "R2_train": 0.644,
-  "Tiempo fit por fold (s)": 2.727
+  "Tiempo fit por fold (s)": 3.514
  },
  {
   "Escenario": "C - Expediente tecnico",
   "Modelo": "Bagging",
-  "MAE_cv": 18.648,
-  "RMSE_cv": 30.826,
+  "MAE_cv": 18.645,
+  "RMSE_cv": 30.825,
   "R2_cv": 0.645,
   "R2_cv_std": 0.005,
   "R2_train": 0.719,
-  "Tiempo fit por fold (s)": 23.327
+  "Tiempo fit por fold (s)": 78.593
  },
  {
   "Escenario": "C - Expediente tecnico",
   "Modelo": "Random Forest",
-  "MAE_cv": 24.04,
-  "RMSE_cv": 34.12,
+  "MAE_cv": 24.064,
+  "RMSE_cv": 34.137,
   "R2_cv": 0.565,
   "R2_cv_std": 0.003,
   "R2_train": 0.643,
-  "Tiempo fit por fold (s)": 11.065
+  "Tiempo fit por fold (s)": 50.458
  },
  {
   "Escenario": "C - Expediente tecnico",
   "Modelo": "Gradient Boosting",
-  "MAE_cv": 18.629,
-  "RMSE_cv": 30.527,
+  "MAE_cv": 18.632,
+  "RMSE_cv": 30.518,
   "R2_cv": 0.652,
   "R2_cv_std": 0.005,
   "R2_train": 0.68,
-  "Tiempo fit por fold (s)": 6.561
+  "Tiempo fit por fold (s)": 15.95
  },
  {
   "Escenario": "C - Expediente tecnico",
   "Modelo": "Stacking",
-  "MAE_cv": 18.558,
-  "RMSE_cv": 30.517,
-  "R2_cv": 0.652,
+  "MAE_cv": 18.56,
+  "RMSE_cv": 30.508,
+  "R2_cv": 0.653,
   "R2_cv_std": 0.005,
   "R2_train": 0.68,
-  "Tiempo fit por fold (s)": 30.15
+  "Tiempo fit por fold (s)": 67.463
  }
 ]

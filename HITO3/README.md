@@ -9,7 +9,7 @@ Proyecto final IN5306 Applied Machine Learning (UTEC, ciclo 2026-2) · Predicci�
 | Archivo / carpeta | Qué es |
 |---|---|
 | `Proyecto_Inversion_Publica_HITO3.ipynb` | Notebook completo (Hitos 1, 2 y 3), ejecutado. Incluye el levantamiento de las observaciones del Hito 2 y la sección 7 de visualización y comunicación. |
-| `app/` | Plataforma web en Streamlit con los resultados del proyecto. |
+| `app/` | Plataforma web **Vigía Obras** en Streamlit. `Inicio.py` define el logo y el orden de las 8 páginas (carpeta `vistas/`), que siguen el orden de la presentación: Inicio, Cómo lo hicimos, Explorar sobrecostos, Comparar modelos, Qué explica el sobrecosto, Priorizar obras, Simulador y Conclusiones. |
 | `app/datos/` | Modelos finales y tablas exportadas por la sección 7.2 del notebook (la app no necesita el dataset completo). |
 | `respaldo/Plataforma_sobrecostos_respaldo.html` | Versión de respaldo **sin internet** de la plataforma (se abre con doble clic). Tiene todo menos el simulador. Se regenera con `python respaldo/generar_respaldo.py`. |
 

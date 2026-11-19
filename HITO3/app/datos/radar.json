@@ -3,12 +3,12 @@
   {
    "Modelo": "Regresion Lineal",
    "R² prueba": 0.0,
-   "RMSE prueba": 0.0005750431,
-   "MAE prueba": 0.005733945,
-   "MedAE target\noriginal": 0.0289855072,
-   "MAE obras\nextremas": 0.0279069767,
-   "Generalizacion\n(brecha)": 0.9974874372,
-   "Velocidad de\nentrenamiento": 0.895041795
+   "RMSE prueba": 0.000575208513086678,
+   "MAE prueba": 0.005730659025788842,
+   "MedAE target\noriginal": 0.028571428571427915,
+   "MAE obras\nextremas": 0.031007751937982775,
+   "Generalizacion\n(brecha)": 0.9974874371859297,
+   "Velocidad de\nentrenamiento": 0.8793396100753214
   },
   {
    "Modelo": "Ridge",
@@ -22,23 +22,23 @@
   },
   {
    "Modelo": "Arbol de Decision",
-   "R² prueba": 0.2032520325,
-   "RMSE prueba": 0.1940770558,
-   "MAE prueba": 0.2803899083,
-   "MedAE target\noriginal": 0.3826086957,
-   "MAE obras\nextremas": 0.2775193798,
-   "Generalizacion\n(brecha)": 0.9748743719,
-   "Velocidad de\nentrenamiento": 0.9220238526
+   "R² prueba": 0.20325203252032525,
+   "RMSE prueba": 0.19413287316652383,
+   "MAE prueba": 0.28022922636103176,
+   "MedAE target\noriginal": 0.3999999999999996,
+   "MAE obras\nextremas": 0.27906976744186274,
+   "Generalizacion\n(brecha)": 0.9748743718592965,
+   "Velocidad de\nentrenamiento": 0.8313214957526714
   },
   {
    "Modelo": "Bagging",
-   "R² prueba": 0.7967479675,
-   "RMSE prueba": 0.7875215641,
-   "MAE prueba": 0.8686926606,
-   "MedAE target\noriginal": 0.8463768116,
+   "R² prueba": 0.7967479674796747,
+   "RMSE prueba": 0.7857348288754663,
+   "MAE prueba": 0.8661891117478514,
+   "MedAE target\noriginal": 0.8285714285714282,
    "MAE obras\nextremas": 1.0,
    "Generalizacion\n(brecha)": 0.0,
-   "Velocidad de\nentrenamiento": 0.153613578
+   "Velocidad de\nentrenamiento": 0.0011212712322330454
   },
   {
    "Modelo": "Random Forest",
@@ -46,28 +46,28 @@
    "RMSE prueba": 1.0,
    "MAE prueba": 1.0,
    "MedAE target\noriginal": 1.0,
-   "MAE obras\nextremas": 0.8565891473,
-   "Generalizacion\n(brecha)": 0.3768844221,
-   "Velocidad de\nentrenamiento": 0.2313772893
+   "MAE obras\nextremas": 0.8604651162790731,
+   "Generalizacion\n(brecha)": 0.37688442211055284,
+   "Velocidad de\nentrenamiento": 0.06505548801176708
   },
   {
    "Modelo": "Gradient Boosting",
-   "R² prueba": 0.9105691057,
-   "RMSE prueba": 0.905692927,
-   "MAE prueba": 0.9048165138,
-   "MedAE target\noriginal": 0.8753623188,
-   "MAE obras\nextremas": 0.8658914729,
-   "Generalizacion\n(brecha)": 0.8115577889,
-   "Velocidad de\nentrenamiento": 0.3032790032
+   "R² prueba": 0.9186991869918698,
+   "RMSE prueba": 0.9117054932412995,
+   "MAE prueba": 0.9108882521489972,
+   "MedAE target\noriginal": 0.8571428571428572,
+   "MAE obras\nextremas": 0.868217054263571,
+   "Generalizacion\n(brecha)": 0.8140703517587939,
+   "Velocidad de\nentrenamiento": 0.24306425740495363
   },
   {
    "Modelo": "Stacking",
-   "R² prueba": 0.918699187,
-   "RMSE prueba": 0.916906268,
-   "MAE prueba": 0.9254587156,
-   "MedAE target\noriginal": 0.9014492754,
-   "MAE obras\nextremas": 0.9542635659,
-   "Generalizacion\n(brecha)": 0.7914572864,
+   "R² prueba": 0.9268292682926829,
+   "RMSE prueba": 0.9246476847857348,
+   "MAE prueba": 0.9332378223495691,
+   "MedAE target\noriginal": 0.8857142857142851,
+   "MAE obras\nextremas": 0.9612403100775193,
+   "Generalizacion\n(brecha)": 0.7964824120603016,
    "Velocidad de\nentrenamiento": 0.0
   }
  ],
@@ -76,16 +76,16 @@
    "Modelo": "Regresion Lineal",
    "R² prueba": 0.0,
    "RMSE prueba": 0.0,
-   "MAE prueba": 0.002496,
-   "MedAE target\noriginal": 0.0076433121,
-   "MAE obras\nextremas": 0.011268281,
-   "Generalizacion\n(brecha)": 0.9937106918,
-   "Velocidad de\nentrenamiento": 0.8955339374
+   "MAE prueba": 0.0025567273889420816,
+   "MedAE target\noriginal": 0.0064102564102564985,
+   "MAE obras\nextremas": 0.011933174224343701,
+   "Generalizacion\n(brecha)": 0.9937106918238994,
+   "Velocidad de\nentrenamiento": 0.7748600847086646
   },
   {
    "Modelo": "Ridge",
-   "R² prueba": 0.0026246719,
-   "RMSE prueba": 0.0014413376,
+   "R² prueba": 0.002610966057441255,
+   "RMSE prueba": 0.001434926101305467,
    "MAE prueba": 0.0,
    "MedAE target\noriginal": 0.0,
    "MAE obras\nextremas": 0.0,
@@ -94,43 +94,43 @@
   },
   {
    "Modelo": "Arbol de Decision",
-   "R² prueba": 0.8713910761,
-   "RMSE prueba": 0.8465696166,
-   "MAE prueba": 0.900864,
-   "MedAE target\noriginal": 0.921656051,
-   "MAE obras\nextremas": 0.8961879645,
-   "Generalizacion\n(brecha)": 0.9245283019,
-   "Velocidad de\nentrenamiento": 0.8557874686
+   "R² prueba": 0.866840731070496,
+   "RMSE prueba": 0.8428038456019515,
+   "MAE prueba": 0.8997123681687438,
+   "MedAE target\noriginal": 0.9230769230769231,
+   "MAE obras\nextremas": 0.8926014319809068,
+   "Generalizacion\n(brecha)": 0.9245283018867925,
+   "Velocidad de\nentrenamiento": 0.8365173732134601
   },
   {
    "Modelo": "Bagging",
-   "R² prueba": 0.9711286089,
-   "RMSE prueba": 0.9642548285,
-   "MAE prueba": 0.98336,
-   "MedAE target\noriginal": 0.9872611465,
-   "MAE obras\nextremas": 0.9923279789,
+   "R² prueba": 0.9660574412532636,
+   "RMSE prueba": 0.9601090543836994,
+   "MAE prueba": 0.9818472355385105,
+   "MedAE target\noriginal": 0.9935897435897436,
+   "MAE obras\nextremas": 0.9880668257756563,
    "Generalizacion\n(brecha)": 0.0,
-   "Velocidad de\nentrenamiento": 0.0714206869
+   "Velocidad de\nentrenamiento": 0.0
   },
   {
    "Modelo": "Random Forest",
-   "R² prueba": 0.9973753281,
-   "RMSE prueba": 0.9966128567,
-   "MAE prueba": 0.968512,
-   "MedAE target\noriginal": 0.9643312102,
-   "MAE obras\nextremas": 0.8969072165,
-   "Generalizacion\n(brecha)": 0.2955974843,
-   "Velocidad de\nentrenamiento": 0.2103134666
+   "R² prueba": 0.9921671018276762,
+   "RMSE prueba": 0.9911752044769696,
+   "MAE prueba": 0.9631192074145093,
+   "MedAE target\noriginal": 0.9615384615384616,
+   "MAE obras\nextremas": 0.8902147971360376,
+   "Generalizacion\n(brecha)": 0.28930817610062887,
+   "Velocidad de\nentrenamiento": 0.07009384532188334
   },
   {
    "Modelo": "Gradient Boosting",
-   "R² prueba": 1.0,
-   "RMSE prueba": 0.9987027962,
-   "MAE prueba": 0.998272,
-   "MedAE target\noriginal": 0.998089172,
-   "MAE obras\nextremas": 0.9863342124,
-   "Generalizacion\n(brecha)": 0.7735849057,
-   "Velocidad de\nentrenamiento": 0.3172598724
+   "R² prueba": 0.9973890339425587,
+   "RMSE prueba": 0.9981345960683025,
+   "MAE prueba": 0.9976350271652283,
+   "MedAE target\noriginal": 1.0,
+   "MAE obras\nextremas": 0.9809069212410512,
+   "Generalizacion\n(brecha)": 0.779874213836478,
+   "Velocidad de\nentrenamiento": 0.2806820692426836
   },
   {
    "Modelo": "Stacking",
@@ -139,8 +139,8 @@
    "MAE prueba": 1.0,
    "MedAE target\noriginal": 1.0,
    "MAE obras\nextremas": 1.0,
-   "Generalizacion\n(brecha)": 0.7672955975,
-   "Velocidad de\nentrenamiento": 0.0
+   "Generalizacion\n(brecha)": 0.7735849056603774,
+   "Velocidad de\nentrenamiento": 0.06793801995554183
   }
  ]
 }

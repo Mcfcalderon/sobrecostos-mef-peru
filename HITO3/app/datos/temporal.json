@@ -101,15 +101,15 @@
   {
    "Escenario": "B - Viabilidad",
    "Modelo": "Gradient Boosting",
-   "2022 (un anio adelante)": 0.138,
-   "2023-2026 (obras en curso)": -0.041,
-   "R2 particion aleatoria": 0.219
+   "2022 (un anio adelante)": 0.14,
+   "2023-2026 (obras en curso)": -0.039,
+   "R2 particion aleatoria": 0.22
   },
   {
    "Escenario": "B - Viabilidad",
    "Modelo": "Random Forest",
-   "2022 (un anio adelante)": 0.137,
-   "2023-2026 (obras en curso)": -0.055,
+   "2022 (un anio adelante)": 0.138,
+   "2023-2026 (obras en curso)": -0.056,
    "R2 particion aleatoria": 0.23
   },
   {
@@ -122,15 +122,15 @@
   {
    "Escenario": "C - Expediente tecnico",
    "Modelo": "Gradient Boosting",
-   "2022 (un anio adelante)": 0.683,
-   "2023-2026 (obras en curso)": 0.557,
-   "R2 particion aleatoria": 0.671
+   "2022 (un anio adelante)": 0.684,
+   "2023-2026 (obras en curso)": 0.555,
+   "R2 particion aleatoria": 0.672
   },
   {
    "Escenario": "C - Expediente tecnico",
    "Modelo": "Random Forest",
-   "2022 (un anio adelante)": 0.665,
-   "2023-2026 (obras en curso)": 0.535,
+   "2022 (un anio adelante)": 0.666,
+   "2023-2026 (obras en curso)": 0.536,
    "R2 particion aleatoria": 0.67
   },
   {

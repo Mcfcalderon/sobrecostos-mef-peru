@@ -47,50 +47,50 @@
   {
    "Subconjunto de prueba": "Todo el conjunto de prueba",
    "Obras": 18894,
-   "R² B": 0.219,
-   "R² C": 0.671,
-   "MAE B": 34.731,
-   "MAE C": 17.86
+   "R² B": 0.22,
+   "R² C": 0.672,
+   "MAE B": 34.708,
+   "MAE C": 17.85
   },
   {
    "Subconjunto de prueba": "Sin casos espejo (costo != expediente)",
    "Obras": 13152,
    "R² B": 0.236,
-   "R² C": 0.571,
-   "MAE B": 35.274,
-   "MAE C": 22.58
+   "R² C": 0.573,
+   "MAE B": 35.268,
+   "MAE C": 22.546
   },
   {
    "Subconjunto de prueba": "Obras casi terminadas (gasto > 95%)",
    "Obras": 6090,
-   "R² B": 0.202,
+   "R² B": 0.206,
    "R² C": 0.638,
-   "MAE B": 34.294,
-   "MAE C": 19.363
+   "MAE B": 34.187,
+   "MAE C": 19.399
   },
   {
    "Subconjunto de prueba": "Casi terminadas y sin espejo",
    "Obras": 5066,
-   "R² B": 0.215,
+   "R² B": 0.219,
    "R² C": 0.599,
-   "MAE B": 34.794,
-   "MAE C": 21.481
+   "MAE B": 34.688,
+   "MAE C": 21.493
   },
   {
    "Subconjunto de prueba": "Sin ningun gasto ejecutado (gasto = 0)",
    "Obras": 2842,
-   "R² B": 0.145,
-   "R² C": 0.635,
-   "MAE B": 26.395,
-   "MAE C": 12.759
+   "R² B": 0.146,
+   "R² C": 0.637,
+   "MAE B": 26.37,
+   "MAE C": 12.754
   },
   {
    "Subconjunto de prueba": "Reentrenado y evaluado sin casos espejo",
    "Obras": 13152,
-   "R² B": 0.241,
-   "R² C": 0.576,
-   "MAE B": 35.23,
-   "MAE C": 23.234
+   "R² B": 0.236,
+   "R² C": 0.579,
+   "MAE B": 35.373,
+   "MAE C": 23.143
   }
  ]
 }

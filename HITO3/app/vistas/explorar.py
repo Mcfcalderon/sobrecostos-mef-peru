@@ -3,10 +3,10 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from utils import configurar_pagina, leer_tabla, pie_de_pagina
+from utils import encabezado, leer_tabla, siguiente
 
-configurar_pagina('Explorar sobrecostos', '🗺️')
-st.title('Explorar sobrecostos')
+RUTA = 'vistas/explorar.py'
+encabezado(RUTA, 'Resultados del análisis exploratorio: dónde, en qué tipo de obras y desde cuándo hay más sobrecosto.')
 st.caption('Desviación presupuestal = (costo actualizado − monto viable) / monto viable. '
            'Se usan las obras con costo ya actualizado (las que aún no registran cambios se excluyen).')
 
@@ -107,4 +107,4 @@ fig.add_vline(x=50, line_dash='dot', line_color='crimson', annotation_text='sobr
 fig.update_layout(showlegend=False, yaxis_title='Obras')
 st.plotly_chart(fig, width='stretch')
 
-pie_de_pagina()
+siguiente(RUTA)

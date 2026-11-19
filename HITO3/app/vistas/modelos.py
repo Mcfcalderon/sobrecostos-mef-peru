@@ -3,11 +3,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from utils import (COLOR_ESC, COLOR_MODELO, ESC_B, ESC_C, NOMBRE_ESC, ORDEN_MODELOS, configurar_pagina,
-                   leer_json, pie_de_pagina)
+from utils import (COLOR_ESC, COLOR_MODELO, ESC_B, ESC_C, NOMBRE_ESC, ORDEN_MODELOS, encabezado, leer_json,
+                   siguiente)
 
-configurar_pagina('Comparar modelos', '📊')
-st.title('Comparar modelos')
+RUTA = 'vistas/modelos.py'
+encabezado(RUTA, 'Qué modelo ayudó más a resolver el problema, con qué criterio se eligió y qué tan robusto es.')
 
 meta = leer_json('meta')
 test = pd.DataFrame(leer_json('metricas_test'))
@@ -25,9 +25,34 @@ esc = st.radio('Momento de decisión', [ESC_B, ESC_C], format_func=lambda e: NOM
 mejor = meta['mejor_modelo'][esc]
 st.success(f'**Mejor modelo en {NOMBRE_ESC[esc]}: {mejor}**')
 
-t_radar, t_metricas, t_temporal, t_fuga, t_et = st.tabs(
-    ['Radar multi-métrica', 'Métricas en prueba y CV', 'Validación temporal', 'Fuga de información',
-     'Revisión del expediente técnico'])
+t_eleccion, t_radar, t_metricas, t_temporal, t_fuga, t_et = st.tabs(
+    ['Elección del modelo', 'Radar multi-métrica', 'Métricas en prueba y CV', 'Validación temporal',
+     'Fuga de información', 'Revisión del expediente técnico'])
+
+with t_eleccion:
+    e = test[(test['Escenario'] == esc) & (test['Modelo'] != 'Baseline (media)')].sort_values('RMSE_test').copy()
+    mejor_rmse = e['RMSE_test'].min()
+    e['Dif. vs mejor RMSE (%)'] = (e['RMSE_test'] / mejor_rmse - 1) * 100
+    e['Empate práctico (< 1%)'] = e['Dif. vs mejor RMSE (%)'] < 1
+    e['Elegido'] = e['Modelo'] == mejor
+    st.markdown('**Regla de decisión (fijada antes de ver resultados):** 1) menor RMSE en prueba; 2) entre los que '
+                'quedan a menos de 1% del mejor (empate práctico), el de **menor brecha de sobreajuste**; '
+                '3) si persiste el empate, el más rápido; 4) el más interpretable.')
+    st.dataframe(e[['Modelo', 'RMSE_test', 'Dif. vs mejor RMSE (%)', 'Empate práctico (< 1%)', 'R2_train', 'R2_test',
+                    'Brecha sobreajuste', 'Tiempo entrenamiento (s)', 'Elegido']],
+                 hide_index=True, width='stretch', column_config={
+                     'RMSE_test': st.column_config.NumberColumn('RMSE prueba', format='%.2f'),
+                     'Dif. vs mejor RMSE (%)': st.column_config.NumberColumn(format='%.2f'),
+                     'R2_train': st.column_config.NumberColumn('R² train', format='%.3f'),
+                     'R2_test': st.column_config.NumberColumn('R² prueba', format='%.3f'),
+                     'Brecha sobreajuste': st.column_config.NumberColumn('Brecha (train − prueba)', format='%.3f'),
+                     'Tiempo entrenamiento (s)': st.column_config.NumberColumn('Entrenamiento (s)', format='%.0f'),
+                 })
+    empatados = e[e['Empate práctico (< 1%)']]
+    g = e.set_index('Modelo').loc[mejor]
+    st.success(f"Quedan en empate práctico: **{', '.join(empatados['Modelo'])}**. Entre ellos, **{mejor}** tiene la menor "
+               f"brecha de sobreajuste ({g['Brecha sobreajuste']:.3f}) y entrena en {g['Tiempo entrenamiento (s)']:.0f} s. "
+               f"Pierde solo {g['RMSE_test'] - mejor_rmse:.2f} pp de RMSE frente al mejor, sin relevancia práctica.")
 
 with t_radar:
     p = radar[esc]
@@ -120,4 +145,4 @@ with t_et:
                  title='Prueba 2: el modelo C se mantiene muy por encima de B aun donde la fuga no es posible')
     st.plotly_chart(fig.update_layout(height=430, yaxis_title=''), width='stretch')
 
-pie_de_pagina()
+siguiente(RUTA)
