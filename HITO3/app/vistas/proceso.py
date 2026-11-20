@@ -1,117 +1,83 @@
 import pandas as pd
 import streamlit as st
 
-from utils import encabezado, flujo, leer_json, siguiente, tarjeta
+from utils import encabezado, flujo, leer_json, siguiente
+from visual import etapa, grilla_anclas
 
 RUTA = 'vistas/proceso.py'
-encabezado(RUTA, 'El proyecto siguió las etapas de CRISP-DM. Aquí está cada paso, con las decisiones que tomamos y por qué.')
+encabezado(RUTA, 'Las 7 etapas de CRISP-DM. Haz clic en una etapa para ir a su detalle.')
 
 meta = leer_json('meta')
 
-flujo(['1 · Negocio', '2 · Datos', '3 · Calidad y EDA', '4 · Preparación', '5 · Modelado', '6 · Evaluación',
-       '7 · Despliegue'])
+grilla_anclas([
+    dict(n=1, titulo='Negocio', texto='Problema y objetivo', icono='maletin', color='azul', ancla='negocio'),
+    dict(n=2, titulo='Datos', texto='Fuente MEF y descarga', icono='base', color='cian', ancla='datos'),
+    dict(n=3, titulo='Calidad y EDA', texto='Errores y hallazgos', icono='lupa', color='turquesa', ancla='eda'),
+    dict(n=4, titulo='Preparación', texto='Limpieza y variables', icono='filtro', color='indigo', ancla='preparacion'),
+    dict(n=5, titulo='Modelado', texto='2 escenarios, 7 modelos', icono='red', color='naranja', ancla='modelado'),
+    dict(n=6, titulo='Evaluación', texto='Elección y robustez', icono='check', color='coral', ancla='evaluacion'),
+    dict(n=7, titulo='Despliegue', texto='Esta plataforma', icono='nube', color='verde', ancla='despliegue'),
+])
 
-a, b, c, d = st.columns(4)
-with a:
-    tarjeta('obras en el dataset del MEF', '68 columnas, descargadas con la API del Portal de Datos Abiertos.',
-            f"{meta['obras_total']:,}")
-with b:
-    tarjeta('obras usadas para modelar', 'Las que ya tienen su costo actualizado registrado.', f"{meta['obras_modelo']:,}")
-with c:
-    tarjeta('modelos comparados', 'Siete modelos de regresión más un baseline, en dos escenarios.', '7 + 1')
-with d:
-    tarjeta('variables excluidas por fuga', 'Solo existen durante o después de la obra: no sirven para prevenir.', '18')
+# 1 ---------------------------------------------------------------------------------------------
+etapa('negocio', 1, 'Entendimiento del negocio', 'Anticipar el sobrecosto al aprobar una obra', 'maletin', 'azul',
+      ['S/ 67,139 M en obras paralizadas (2025)'])
+st.markdown('**Objetivo:** predecir el % de sobrecosto con las características iniciales de la obra, para '
+            '**priorizar la supervisión**. Es un problema de regresión supervisada y preventiva.')
+st.latex(r'\text{Sobrecosto} = \frac{\text{Costo actualizado} - \text{Monto viable}}{\text{Monto viable}} \times 100')
 
-st.write('')
-e1, e2, e3, e4, e5, e6, e7 = st.tabs(['1 · Negocio', '2 · Datos', '3 · Calidad y EDA', '4 · Preparación',
-                                      '5 · Modelado', '6 · Evaluación', '7 · Despliegue'])
+# 2 ---------------------------------------------------------------------------------------------
+etapa('datos', 2, 'Adquisición de datos', 'Portal de Datos Abiertos del MEF · Detalle de Inversiones', 'base', 'cian',
+      [f"{meta['obras_total']:,} obras", '68 columnas', '1 dataset'])
+flujo(['API datastore_search', 'Páginas de 10,000', 'Snapshot fijo en Drive', 'Conversión de tipos'])
 
-with e1:
-    st.markdown("""
-**Problema.** El Estado peruano no tiene una herramienta preventiva para anticipar, al aprobar una obra, cuánto podría
-desviarse su costo final. Según la Contraloría, el costo de las obras paralizadas pasó de S/ 21,595 millones (2022) a
-S/ 67,139 millones (2025).
-
-**Objetivo.** Desarrollar y comparar modelos que predigan el porcentaje de sobrecosto con las características
-iniciales de la obra, para priorizar la supervisión.
-
-**Variable objetivo.**
-""")
-    st.latex(r'\text{Sobrecosto (\%)} = \frac{\text{Costo actualizado} - \text{Monto viable}}{\text{Monto viable}} \times 100')
-    st.caption('Ejemplo: una obra viabilizada en S/ 1,000,000 que hoy cuesta S/ 1,300,000 tiene +30%. '
-               'Se predice en % y no en soles para comparar obras de cualquier tamaño.')
-
-with e2:
-    st.markdown(f"""
-- **Fuente:** Portal de Datos Abiertos del MEF, dataset *Detalle de Inversiones* (Invierte.pe). Un solo dataset.
-- **Descarga:** API `datastore_search`, paginada de 10,000 en 10,000 registros, con reintentos.
-- **Tamaño:** {meta['obras_total']:,} inversiones × 68 columnas (montos, ubicación, función, modalidad, fechas y avances).
-- **Reproducibilidad:** se guardó un *snapshot* fijo en Google Drive; el notebook siempre usa los mismos datos.
-- La API entrega todo como texto, así que se convirtieron montos, avances, fechas y coordenadas a su tipo correcto.
-""")
-
-with e3:
-    st.markdown('**Chequeos de coherencia** (más allá de los valores vacíos):')
+# 3 ---------------------------------------------------------------------------------------------
+etapa('eda', 3, 'Calidad y análisis exploratorio', 'Más allá de los valores vacíos', 'lupa', 'turquesa',
+      ['Media 38.9% vs mediana 0%', '22,349 outliers'])
+i, d = st.columns([3, 2])
+with i:
     st.dataframe(pd.DataFrame([
         ('Fecha de fin antes que la de inicio', '108', 'Fechas a vacío'),
-        ('Viabilidad declarada después de iniciar la obra', '17,755', 'Documentado'),
-        ('Monto viable mayor a S/ 2,958 millones', '16', 'Acotado'),
+        ('Viabilidad después de iniciar la obra', '17,755', 'Documentado'),
+        ('Monto viable > S/ 2,958 millones', '16', 'Acotado'),
         ('Código único duplicado', '1', 'Eliminado'),
         ('Coordenadas fuera del Perú', '23,120', 'A vacío'),
-    ], columns=['Caso', 'Obras', 'Tratamiento']), hide_index=True, width='stretch')
-    st.markdown("""
-**Hallazgos clave del EDA**
-- El sobrecosto es **muy desigual**: media de 38.9% frente a una mediana de 0% (asimetría de 189.6). Por eso se comparan
-  grupos con la mediana y se usan pruebas robustas (Spearman y Kruskal-Wallis + η²).
-- Hay **22,349 outliers** (14.9%). No se eliminan, porque son justamente los casos graves.
-- **55,308 obras** muestran 0% porque su costo todavía no se actualiza. Su 0% es falso y enseñaría algo incorrecto al
-  modelo, así que se excluyeron. Quedan **94,469 obras**.
-""")
+    ], columns=['Chequeo de coherencia', 'Obras', 'Tratamiento']), hide_index=True, width='stretch')
+with d:
+    st.metric('Obras excluidas (0% falso: costo sin actualizar)', '55,308')
+    st.metric('Obras que quedan para modelar', f"{meta['obras_modelo']:,}")
+st.caption('El sobrecosto es muy desigual (asimetría 189.6): se usan la mediana y pruebas robustas (Spearman, '
+           'Kruskal-Wallis + η²). Los outliers no se borran: son los casos graves.')
 
-with e4:
-    st.markdown('**Orden del flujo** (todo lo que aprende de los datos se ajusta solo con el entrenamiento):')
-    flujo(['Quitar duplicados', 'Winsorizar el target', 'Crear variables', 'Partir 80/20', 'Imputar vacíos',
-           'Escalar + One-Hot', 'Entrenar'])
-    i, d = st.columns(2)
-    with i:
-        st.markdown(f"""
-- **Winsorización del target:** límites de {meta['lim_inf']:.1f}% y {meta['lim_sup']:.1f}%, calculados solo con train.
-  Se ajusta el 9.1% de las obras y ninguna se borra.
-- **División:** {meta['obras_train']:,} obras de entrenamiento y {meta['obras_test']:,} de prueba (semilla 3791).
-- **Imputación:** mediana, moda o 0 según lo que significa cada vacío.
-- **Codificación:** One-Hot con `min_frequency = 50` para agrupar categorías raras.
-""")
-    with d:
-        st.dataframe(pd.DataFrame([
-            ('plazo_dias', 'Duración programada de la obra'),
-            ('anio_viabilidad', 'Año de aprobación'),
-            ('monto_viable_log', 'Tamaño de la obra (logaritmo)'),
-            ('ratio_et_viable', 'Cambio del expediente técnico frente al monto viable (solo en C)'),
-        ], columns=['Variable creada', 'Qué mide']), hide_index=True, width='stretch')
-    st.warning('**Fuga de información:** se excluyeron 18 variables (avances, devengados, saldos, certificaciones, '
-               'estado y fechas reales de ejecución). Con ellas el R² sube a 0.99, pero esa información no existe al '
-               'aprobar la obra.')
+# 4 ---------------------------------------------------------------------------------------------
+etapa('preparacion', 4, 'Preparación de los datos', 'Todo se ajusta solo con el entrenamiento', 'filtro', 'indigo',
+      [f"Train {meta['obras_train']:,}", f"Test {meta['obras_test']:,}", '18 variables de fuga fuera'])
+flujo(['Quitar duplicados', 'Winsorizar target', 'Crear variables', 'Partir 80/20', 'Imputar', 'Escalar + One-Hot',
+       'Entrenar'])
+a, b, c = st.columns(3)
+a.metric('Límites de Winsorización', f"{meta['lim_inf']:.1f}% / {meta['lim_sup']:.1f}%", help='Calculados solo con train')
+b.metric('Obras ajustadas', '9.1%', help='Ninguna se borra')
+c.metric('R² si se usaran variables de fuga', '0.99', delta='inútil para prevenir', delta_color='inverse')
+with st.expander('Variables creadas y codificación'):
+    st.dataframe(pd.DataFrame([
+        ('plazo_dias', 'Duración programada de la obra'), ('anio_viabilidad', 'Año de aprobación'),
+        ('monto_viable_log', 'Tamaño de la obra (logaritmo)'),
+        ('ratio_et_viable', 'Cambio del expediente frente al monto viable (solo C)'),
+    ], columns=['Variable creada', 'Qué mide']), hide_index=True, width='stretch')
+    st.caption('Imputación con mediana, moda o 0 según el significado del vacío · One-Hot con min_frequency = 50 · '
+               'semilla 3791.')
 
-with e5:
-    i, d = st.columns(2)
-    with i:
-        st.markdown("""
-**Dos escenarios según el momento de decisión de Invierte.pe**
-- **B · Viabilidad (16 variables):** monto, plazo, año, ubicación, nivel, sector, función, modalidad, tipología…
-- **C · Expediente técnico (19 variables):** las de B + monto del expediente, `ratio_et_viable` y si tiene expediente.
-
-Mismas obras, misma partición y mismo target: la diferencia entre B y C mide solo el valor de la información.
-""")
-    with d:
-        st.markdown("""
-**Modelos (escalera de complejidad)**
-- Baseline (media) → Regresión lineal → Ridge → Árbol de decisión
-- Ensambles: Bagging, Random Forest, Gradient Boosting y Stacking
-
-**Validación:** KFold de 5 partes con el preprocesamiento dentro del pipeline.
-**Ajuste:** GridSearchCV y RandomizedSearchCV (3 folds sobre el 40% de train, 30,230 obras), optimizando RMSE.
-""")
-    st.markdown('**Mejores hiperparámetros y mejora del RMSE (config. inicial → ajustada)**')
+# 5 ---------------------------------------------------------------------------------------------
+etapa('modelado', 5, 'Modelamiento', 'Dos momentos de decisión de Invierte.pe', 'red', 'naranja',
+      ['B: 16 variables', 'C: 19 variables', '7 modelos + baseline'])
+i, d = st.columns(2)
+with i.container(border=True):
+    st.markdown('**🟦 B · Viabilidad** — monto, plazo, año, ubicación, nivel, sector, función, modalidad, tipología…')
+    st.markdown('**🟧 C · Expediente técnico** — lo de B + monto del expediente y su cambio frente al monto viable.')
+with d.container(border=True):
+    flujo(['Baseline', 'Lineal', 'Ridge', 'Árbol', 'Bagging', 'Random Forest', 'Gradient Boosting', 'Stacking'])
+    st.caption('KFold de 5 partes · ajuste con Grid/RandomizedSearchCV (3 folds, 30,230 obras) optimizando RMSE.')
+with st.expander('Hiperparámetros elegidos y mejora del RMSE'):
     st.dataframe(pd.DataFrame([
         ('Ridge', 'alpha = 10', '49.28 → 49.26', '44.17 → 44.15'),
         ('Árbol de decisión', 'max_depth = 10; min_samples_leaf = 200 (B) / 50 (C)', '49.65 → 49.25', '32.66 → 32.45'),
@@ -119,28 +85,19 @@ Mismas obras, misma partición y mismo target: la diferencia entre B y C mide so
         ('Random Forest', 'max_features = 0.2; min_samples_leaf = 5', '47.54 → 46.94', '34.85 → 31.18'),
         ('Gradient Boosting', 'learning_rate = 0.05; 63 hojas; 300 iteraciones; L2 = 10; min_leaf = 20',
          '47.08 → 46.93', '30.85 → 30.75'),
-    ], columns=['Modelo', 'Hiperparámetros elegidos', 'RMSE B', 'RMSE C']), hide_index=True, width='stretch')
-    st.caption('El ajuste mejora poco: el límite del desempeño está en la información disponible, no en la configuración.')
+    ], columns=['Modelo', 'Hiperparámetros', 'RMSE B', 'RMSE C']), hide_index=True, width='stretch')
 
-with e6:
-    st.markdown("""
-- **Prueba única:** cada modelo se reentrena con todo train y se evalúa **una sola vez** en las obras de prueba.
-- **Criterios fijados antes de ver resultados:** (1) menor RMSE; (2) si hay empate práctico (menos de 1% de
-  diferencia), el que menos sobreajusta; (3) el más rápido; (4) el más interpretable.
-- **Pruebas de robustez** (observaciones del Hito 2):
-    - Error sobre el sobrecosto original, sin winsorizar.
-    - Gráfico de radar con 7 métricas.
-    - Revisión de `MONTO_ET_F8` para descartar fuga en el escenario C.
-    - Validación temporal: entrenar hasta 2021 y probar con 2022 y 2023-2026.
-""")
-    st.page_link('vistas/modelos.py', label='Ver los resultados en "Comparar modelos"', icon=':material/leaderboard:')
+# 6 ---------------------------------------------------------------------------------------------
+etapa('evaluacion', 6, 'Evaluación', 'Criterios fijados antes de ver los resultados', 'check', 'coral',
+      ['Prueba única', 'Gradient Boosting'])
+flujo(['Menor RMSE', 'Empate < 1%', 'Menor sobreajuste', 'Más rápido', 'Más interpretable'])
+st.markdown('Pruebas de robustez: **error sin winsorizar · radar · revisión de MONTO_ET_F8 · validación temporal**.')
+st.page_link('vistas/modelos.py', label='Ver los resultados en Comparar modelos', icon=':material/arrow_forward:')
 
-with e7:
-    st.markdown("""
-- Los modelos finales (Gradient Boosting B y C) se exportaron con `joblib` **junto con su preprocesamiento**, para que
-  el simulador aplique exactamente las mismas transformaciones del entrenamiento.
-- La plataforma carga solo resúmenes (16 archivos, unos 8 MB), porque el dataset completo pesa 216 MB.
-- Está publicada en Streamlit Community Cloud. Un flujo de GitHub Actions la visita cada 4 horas para que no se duerma.
-""")
+# 7 ---------------------------------------------------------------------------------------------
+etapa('despliegue', 7, 'Despliegue', 'Vigía Obras en Streamlit Community Cloud', 'nube', 'verde',
+      ['16 archivos · 8 MB', 'Activa 24/7'])
+flujo(['Modelos + preprocesamiento (joblib)', 'Resúmenes JSON/Parquet', 'Streamlit Cloud',
+       'GitHub Actions la mantiene despierta'])
 
 siguiente(RUTA)
