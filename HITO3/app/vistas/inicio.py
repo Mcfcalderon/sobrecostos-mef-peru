@@ -53,7 +53,7 @@ col_b, col_c = st.columns(2)
 for col, titulo, sub, m, esc in [
         (col_b, '🟦 Modelo B · Al declarar la viabilidad', 'Solo datos de la aprobación (16 variables).', mB, ESC_B),
         (col_c, '🟧 Modelo C · Al aprobar el expediente', 'Suma el expediente técnico (19 variables).', mC, ESC_C)]:
-    with col.container(border=True):
+    with col:
         st.markdown(f'#### {titulo}')
         st.caption(sub)
         a, b, c = st.columns(3)

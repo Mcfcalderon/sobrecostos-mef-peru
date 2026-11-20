@@ -61,7 +61,7 @@ CSS_VISUAL = """
   position: absolute; top: 12px; right: 12px; background: rgba(255, 255, 255, 0.92); color: var(--c1);
   font-size: 0.72rem; font-weight: 800; padding: 3px 9px; border-radius: 999px; letter-spacing: .02em;
 }
-.vo-card .vo-cuerpo {padding: 13px 18px 15px 18px; min-height: 118px; display: flex; flex-direction: column;}
+.vo-card .vo-cuerpo {padding: 13px 18px 15px 18px; min-height: 132px; display: flex; flex-direction: column;}
 .vo-card .vo-cta {margin-top: auto !important; padding-top: 9px;}
 .vo-card .vo-cuerpo .vo-tt {margin: 0 0 3px 0; padding: 0; font-size: 1.04rem; color: #0F3B66; font-weight: 750;}
 .vo-card .vo-cuerpo p {margin: 0; font-size: 0.87rem; color: #5B6B7C; line-height: 1.35;}
@@ -73,12 +73,14 @@ CSS_VISUAL = """
 
 /* Tarjeta completa clickeable: el enlace de Streamlit cubre la tarjeta y queda invisible */
 [class*="st-key-vonav"] {position: relative; gap: 0 !important;}
+[class*="st-key-vonav"] .stElementContainer {animation: none !important; transform: none !important;}
 [class*="st-key-vonav"] .stElementContainer,
 [class*="st-key-vonav"] [data-testid="stPageLink"],
 [class*="st-key-vonav"] [data-testid="stPageLink"] * {position: static !important;}
 [class*="st-key-vonav"] .stElementContainer:has([data-testid="stPageLink"]) {height: 0; margin: 0; padding: 0;}
 [class*="st-key-vonav"] a[data-testid="stPageLink-NavLink"] {
-  position: absolute !important; inset: 0; z-index: 5; opacity: 0; border-radius: 18px;
+  position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+  max-width: none !important; z-index: 5; opacity: 0; border-radius: 18px;
 }
 
 /* Grilla con enlaces internos (anclas) */

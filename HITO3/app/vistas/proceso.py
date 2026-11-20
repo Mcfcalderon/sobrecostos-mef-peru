@@ -71,10 +71,10 @@ with st.expander('Variables creadas y codificación'):
 etapa('modelado', 5, 'Modelamiento', 'Dos momentos de decisión de Invierte.pe', 'red', 'naranja',
       ['B: 16 variables', 'C: 19 variables', '7 modelos + baseline'])
 i, d = st.columns(2)
-with i.container(border=True):
+with i:
     st.markdown('**🟦 B · Viabilidad** — monto, plazo, año, ubicación, nivel, sector, función, modalidad, tipología…')
     st.markdown('**🟧 C · Expediente técnico** — lo de B + monto del expediente y su cambio frente al monto viable.')
-with d.container(border=True):
+with d:
     flujo(['Baseline', 'Lineal', 'Ridge', 'Árbol', 'Bagging', 'Random Forest', 'Gradient Boosting', 'Stacking'])
     st.caption('KFold de 5 partes · ajuste con Grid/RandomizedSearchCV (3 folds, 30,230 obras) optimizando RMSE.')
 with st.expander('Hiperparámetros elegidos y mejora del RMSE'):

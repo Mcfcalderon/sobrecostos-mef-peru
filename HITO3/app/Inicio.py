@@ -13,7 +13,7 @@ aplicar_estilo()
 aplicar_estilo_visual()
 
 secciones = {}
-for i, (ruta, titulo, icono, seccion) in enumerate(PAGINAS):
+for i, (ruta, titulo, icono, seccion, *_) in enumerate(PAGINAS):
     secciones.setdefault(seccion, []).append(
         st.Page(ruta, title=f'{i + 1}. {titulo}', icon=icono, default=(i == 0)))
 
